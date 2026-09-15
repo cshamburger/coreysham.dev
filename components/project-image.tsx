@@ -15,7 +15,7 @@ export function ProjectImage({ src, alt }: ProjectImageProps) {
   return (
     <div
       className={cn(
-        "bg-primary relative aspect-square overflow-hidden border-b border-border transition-opacity duration-500",
+        "relative aspect-square overflow-hidden bg-background border-b border-border transition-opacity duration-500",
         loaded ? "opacity-100" : "opacity-0"
       )}
     >
@@ -24,9 +24,8 @@ export function ProjectImage({ src, alt }: ProjectImageProps) {
         alt={alt}
         fill
         onLoad={() => setLoaded(true)}
-        className="object-cover group-hover:scale-105 transition-transform duration-500 grayscale mix-blend-luminosity dark:mix-blend-darken"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
   );
 }

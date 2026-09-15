@@ -29,31 +29,34 @@ import { ProjectImage } from "@/components/project-image";
 export default function Home() {
   const projects = [
     {
-      title: "Nebula Dashboard",
+      title: "OPERRA",
       description:
-        "Real-time analytics platform for distributed systems. Built with React, WebSocket, and Go.",
-      tags: ["React", "Go", "WebSocket", "D3.js"],
-      image: "/project-placeholder-1.jpg",
-      link: "#",
-      repo: "#",
+        "Developer infrastructure and SaaS API platform featuring multi-tenant organizations, API key management, usage tracking, billing workflows, and production-oriented backend architecture.",
+      tags: ["TypeScript", "PostgreSQL", "Prisma", "Redis", "Docker", "REST API"],
+      image: "/operra-dashboard.png",
+      link: "https://www.ventryxtech.com/login",
+      linkLabel: "Live Demo",
+      repo: "https://github.com/Ventryx-Technologies/operra-web.git",
     },
     {
-      title: "Void Chain",
+      title: "3D PrintVault",
       description:
-        "Decentralized identity verification protocol. Smart contracts written in Solidity.",
-      tags: ["Solidity", "Ethereum", "Web3.js", "Node.js"],
-      image: "/project-placeholder-2.jpg",
-      link: "#",
-      repo: "#",
+        "Desktop application for organizing and managing 3D printing assets and workflows, with licensing, file management, and integrations designed for digital fabrication.",
+      tags: ["Tauri", "React", "TypeScript", "Vite", "REST API"],
+      image: "/printvault-dashboard.png",
+      link: "https://github.com/SwiftPrint-Lab/3D-PrintVault/releases",
+      linkLabel: "View Release",
+      repo: "https://github.com/SwiftPrint-Lab/3D-PrintVault.git",
     },
     {
-      title: "Cyber Construct",
+      title: "ITSM Ticketing System",
       description:
-        "3D architectural visualization tool running in the browser using WebGL.",
-      tags: ["Three.js", "WebGL", "Vue", "Python"],
-      image: "/project-placeholder-3.jpg",
-      link: "#",
-      repo: "#",
+        "IT service management application featuring user authentication, ticket management, automated triage, workflow routing, and database-backed incident tracking.",
+      tags: ["Python", "Flask", "SQLite", "SQLAlchemy", "HTML", "CSS"],
+      image: "/itsm-ticketing-system.png",
+      link: "https://itsm-ticketing-system.onrender.com/",
+      linkLabel: "Live Demo",
+      repo: "https://github.com/cshamburger/itsm-ticketing-system.git",
     },
   ];
 
@@ -105,21 +108,31 @@ export default function Home() {
         className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
       >
         <div className="text-xl font-bold font-mono tracking-tighter">
-          Marcus<span className="text-primary">_</span>Chen
+          Corey<span className="text-primary">_</span>Shamburger
         </div>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
+
+        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
           <Link
             href="#projects"
             className="hover:text-primary transition-colors"
           >
             Projects
           </Link>
-          <Link href="#skills" className="hover:text-primary transition-colors">
+
+          <Link
+            href="#skills"
+            className="hover:text-primary transition-colors"
+          >
             Skills
           </Link>
-          <Link href="#blog" className="hover:text-primary transition-colors">
-            Logs
+
+          <Link
+            href="#blog"
+            className="hover:text-primary transition-colors"
+          >
+            About
           </Link>
+
           <Link
             href="#contact"
             className="hover:text-primary transition-colors"
@@ -127,11 +140,12 @@ export default function Home() {
             Contact
           </Link>
         </nav>
+
         <Button
           variant="outline"
           className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary"
         >
-          resume_v4.pdf
+          RESUME
         </Button>
       </Container>
 
@@ -142,10 +156,11 @@ export default function Home() {
       >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="relative w-[100vw] h-[100vh] bg-background overflow-hidden">
+          <div className="relative w-screen h-screen bg-background overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
+
+          <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/50 to-background" />
         </div>
 
         <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -157,46 +172,60 @@ export default function Home() {
               </span>
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
+
             <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
-              FULL
+              SOFTWARE
               <br />
-              STACK
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
-                DEV_
+              <span className="text-transparent bg-clip-text bg-linearr-to-r from-primary to-foreground">
+                DEVELOPER
               </span>
             </h1>
+
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
-              Architecting digital voids and crafting high-performance web
-              experiences. Specialized in scalable distributed systems and
-              interactive 3D interfaces.
+              I specialize in Software Development with a focus on Application
+              Development, building full-stack applications, backend services,
+              REST APIs, databases, and automation tools.
             </p>
+
             <div className="flex gap-4 pt-4 items-center">
               <Link
                 href="#projects"
-                className={cn("uppercase", buttonVariants({ size: "lg" }))}
+                className={cn(
+                  "uppercase",
+                  buttonVariants({ size: "lg" })
+                )}
               >
                 View projects <ArrowRight className="size-4" />
               </Link>
+
               <div className="flex gap-2">
                 <Link
-                  href="#"
+                  href="https://github.com/cshamburger"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
                 >
                   <Github className="h-5 w-5" />
                 </Link>
+
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/corey-shamburger"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
+
                 <Link
-                  href="#"
+                  href="mailto:corey@coreysham.dev"
+                  aria-label="Email Corey"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
@@ -208,7 +237,7 @@ export default function Home() {
           </div>
 
           {/* Decorative Abstract Element */}
-          <div className="hidden md:block relative h-[500px] w-full border border-border/30 bg-card/10 backdrop-blur-sm p-8">
+          <div className="hidden md:block relative h-125 w-full border border-border/30 bg-card/10 backdrop-blur-sm p-8">
             <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-primary"></div>
             <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-primary"></div>
             <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-primary"></div>
@@ -219,22 +248,27 @@ export default function Home() {
                 <span>SYS.STATUS: NORMAL</span>
                 <span>UPTIME: 99.9%</span>
               </div>
+
               <div className="space-y-2">
                 <div className="h-1 w-full bg-secondary overflow-hidden">
                   <div className="h-full bg-primary w-[75%]"></div>
                 </div>
+
                 <div className="flex justify-between">
                   <span>CPU_LOAD</span>
                   <span>75%</span>
                 </div>
+
                 <div className="h-1 w-full bg-secondary overflow-hidden">
                   <div className="h-full bg-primary w-[42%]"></div>
                 </div>
+
                 <div className="flex justify-between">
                   <span>MEM_USAGE</span>
                   <span>42%</span>
                 </div>
               </div>
+
               <div className="text-right">
                 <span className="block text-4xl font-bold text-foreground">
                   03
@@ -245,6 +279,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+
       {/* Projects Section */}
       <Container
         id="projects"
@@ -259,11 +294,13 @@ export default function Home() {
               <br />
               WORKS
             </h2>
+
             <div className="h-1 w-24 bg-primary"></div>
           </div>
+
           <p className="text-muted-foreground max-w-sm text-left">
-            A collection of experiments, production apps, and open source
-            contributions.
+            A selection of software applications, backend systems, and developer
+            tools built to solve practical problems.
           </p>
         </div>
 
@@ -274,11 +311,13 @@ export default function Home() {
               className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
             >
               <ProjectImage src={project.image} alt={project.title} />
+
               <div className="grid gap-4">
                 <CardHeader className="grid gap-4">
                   <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <Badge
@@ -291,21 +330,28 @@ export default function Home() {
                     ))}
                   </div>
                 </CardHeader>
+
                 <CardContent>
                   <CardDescription className="text-base">
                     {project.description}
                   </CardDescription>
                 </CardContent>
               </div>
+
               <CardFooter className="flex justify-between pt-0">
                 <Link
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
-                  LIVE DEMO <ExternalLink className="size-3" />
+                  {project.linkLabel} <ExternalLink className="size-3" />
                 </Link>
+
                 <Link
                   href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
                   CODE <Github className="size-3" />
@@ -315,6 +361,7 @@ export default function Home() {
           ))}
         </div>
       </Container>
+
       {/* Skills Matrix */}
       <Container
         id="skills"
@@ -327,23 +374,28 @@ export default function Home() {
             <h2 className="text-4xl font-display tracking-tighter mb-6">
               TECH_STACK
             </h2>
+
             <p className="text-muted-foreground mb-8">
               My preferred weapons of choice for building digital products.
               Always learning, always evolving.
             </p>
+
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
                 <Code2 className="h-8 w-8 mb-2 text-primary" />
                 <span className="font-mono text-xs">CLEAN_CODE</span>
               </div>
+
               <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
                 <Database className="h-8 w-8 mb-2 text-primary" />
                 <span className="font-mono text-xs">SCALABLE_DB</span>
               </div>
+
               <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
                 <Cpu className="h-8 w-8 mb-2 text-primary" />
                 <span className="font-mono text-xs">PERFORMANCE</span>
               </div>
+
               <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
                 <Terminal className="h-8 w-8 mb-2 text-primary" />
                 <span className="font-mono text-xs">DEVOPS</span>
@@ -357,6 +409,7 @@ export default function Home() {
                 <h3 className="text-xl font-display border-b border-primary/30 pb-2 inline-block">
                   {skillGroup.category}
                 </h3>
+
                 <ul className="space-y-3">
                   {skillGroup.items.map((skill, sIdx) => (
                     <li
@@ -366,7 +419,8 @@ export default function Home() {
                       <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         {skill}
                       </span>
-                      <div className="h-[2px] w-12 bg-secondary group-hover:bg-primary transition-colors"></div>
+
+                      <div className="h-0.5 w-12 bg-secondary group-hover:bg-primary transition-colors"></div>
                     </li>
                   ))}
                 </ul>
@@ -375,12 +429,15 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      {/* Blog Section */}
+
+      {/* Blog / About Section */}
       <Container
         id="blog"
         className="py-24 border-t border-border max-w-7xl mx-auto"
       >
-        <h2 className="text-4xl font-display mb-12 uppercase">Transmissions</h2>
+        <h2 className="text-4xl font-display mb-12 uppercase">
+          Transmissions
+        </h2>
 
         <div className="grid gap-8">
           {blogPosts.map((post, index) => (
@@ -389,14 +446,17 @@ export default function Home() {
                 <h3 className="text-2xl font-display group-hover:text-primary transition-colors text-balance">
                   {post.title}
                 </h3>
+
                 <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
                   {post.date} // {post.readTime}
                 </span>
               </div>
+
               <p className="text-muted-foreground mb-4 max-w-2xl">
                 {post.excerpt}
               </p>
-              <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
+
+              <div className="h-px w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
             </Link>
           ))}
         </div>
@@ -405,11 +465,18 @@ export default function Home() {
           <Button variant="outline">VIEW ALL POSTS</Button>
         </div>
       </Container>
+
       {/* Contact Section */}
-      <Container id="contact" className="py-24 bg-card border-t border-border">
+      <Container
+        id="contact"
+        className="py-24 bg-card border-t border-border"
+      >
         <div className="max-w-2xl justify-self-center">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-display mb-4">INITIATE_CONTACT</h2>
+            <h2 className="text-4xl font-display mb-4">
+              INITIATE_CONTACT
+            </h2>
+
             <p className="text-muted-foreground">
               Have a project in mind or just want to discuss the singularity?
               Send a signal.
@@ -425,8 +492,10 @@ export default function Home() {
                 >
                   NAME
                 </label>
+
                 <Input id="name" placeholder="John Doe" />
               </div>
+
               <div className="space-y-2">
                 <label
                   htmlFor="email"
@@ -434,9 +503,15 @@ export default function Home() {
                 >
                   EMAIL
                 </label>
-                <Input id="email" type="email" placeholder="john@example.com" />
+
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john@example.com"
+                />
               </div>
             </div>
+
             <div className="space-y-2">
               <label
                 htmlFor="message"
@@ -444,18 +519,21 @@ export default function Home() {
               >
                 MESSAGE
               </label>
+
               <Textarea
                 id="message"
                 placeholder="Enter your message..."
-                className="min-h-[150px]"
+                className="min-h-37.5"
               />
             </div>
+
             <Button type="submit" className="w-full" size="lg">
               SEND TRANSMISSION
             </Button>
           </form>
         </div>
       </Container>
+
       {/* Footer */}
       <Container
         component="footer"
@@ -463,17 +541,33 @@ export default function Home() {
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-xs font-mono text-muted-foreground">
-            © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
+            © 2026 COREY SHAMBURGER. ALL RIGHTS RESERVED.
           </div>
+
           <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="https://github.com/cshamburger"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               GITHUB
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
+
+            <Link
+              href="https://www.linkedin.com/in/corey-shamburger"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               LINKEDIN
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              TWITTER
+
+            <Link
+              href="mailto:corey@coreysham.dev"
+              className="hover:text-primary transition-colors"
+            >
+              EMAIL
             </Link>
           </div>
         </div>
