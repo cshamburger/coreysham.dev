@@ -62,16 +62,20 @@ export default function Home() {
 
   const skills = [
     {
-      category: "Frontend",
-      items: ["React", "TypeScript", "Tailwind CSS", "Three.js", "Next.js"],
+      category: "Languages",
+      items: ["Python", "PHP", "JavaScript", "TypeScript", "SQL", "HTML5", "CSS3"],
     },
     {
-      category: "Backend",
-      items: ["Node.js", "Go", "PostgreSQL", "Redis", "Docker"],
+      category: "Frameworks",
+      items: ["React", "Next.js", "Flask", "Tauri", "Vite", "jQuery"],
+    },
+    {
+      category: "Databases",
+      items: ["PostgreSQL", "MySQL", "SQLite", "Prisma ORM", "SQLAlchemy"],
     },
     {
       category: "Tools",
-      items: ["Git", "Linux", "AWS", "Kubernetes", "Figma"],
+      items: ["Git", "GitHub", "Docker", "Postman", "VS Code", "NetBeans"],
     },
   ];
 
