@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     description,
     url: "./",
     siteName: title,
-    images: "/icon.png",
   },
 };
 
