@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
-// Next.js processes this stylesheet at build time; TypeScript has no module declaration for CSS.
-// @ts-expect-error -- global CSS is handled by Next.js
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
