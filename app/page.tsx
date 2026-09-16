@@ -25,6 +25,8 @@ import { Container } from "@/components/zippystarter/container";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ProjectImage } from "@/components/project-image";
+import { ContactForm } from "@/components/contact/contact-form";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   const projects = [
@@ -79,32 +81,9 @@ export default function Home() {
     },
   ];
 
-  const blogPosts = [
-    {
-      title: "Optimizing React Render Cycles in High-Frequency Data Apps",
-      date: "Oct 12, 2024",
-      readTime: "5 min read",
-      excerpt:
-        "Deep dive into memoization strategies and custom hooks for handling 100+ updates per second.",
-    },
-    {
-      title: "The State of WebAssembly in 2024",
-      date: "Sep 28, 2024",
-      readTime: "8 min read",
-      excerpt:
-        "Is WASM ready to replace JavaScript for heavy compute tasks? A performance benchmark.",
-    },
-    {
-      title: "Building a Custom Kubernetes Operator with Go",
-      date: "Aug 15, 2024",
-      readTime: "12 min read",
-      excerpt:
-        "Automating stateful application management using the Operator pattern.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+      <ScrollToTop />
       {/* Navigation / Header */}
       <Container
         component="header"
@@ -131,7 +110,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="#blog"
+            href="#about"
             className="hover:text-primary transition-colors"
           >
             About
@@ -146,10 +125,17 @@ export default function Home() {
         </nav>
 
         <Button
+          asChild
           variant="outline"
           className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary"
         >
-          RESUME
+          <a
+            href="/Corey_Shamburger_Software_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RESUME
+          </a>
         </Button>
       </Container>
 
@@ -180,7 +166,12 @@ export default function Home() {
             <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
               SOFTWARE
               <br />
-              <span className="text-transparent bg-clip-text bg-linearr-to-r from-primary to-foreground">
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(to right, #00bfe8 0%, #67e8f9 50%, #ffffff 100%)",
+                }}
+              >
                 DEVELOPER
               </span>
             </h1>
@@ -192,7 +183,7 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 pt-4 items-center">
-              <Link
+              <a
                 href="#projects"
                 className={cn(
                   "uppercase",
@@ -200,7 +191,7 @@ export default function Home() {
                 )}
               >
                 View projects <ArrowRight className="size-4" />
-              </Link>
+              </a>
 
               <div className="flex gap-2">
                 <Link
@@ -227,7 +218,7 @@ export default function Home() {
                   <Linkedin className="h-5 w-5" />
                 </Link>
 
-                <Link
+                <a
                   href="mailto:corey@coreysham.dev"
                   aria-label="Email Corey"
                   className={cn(
@@ -235,51 +226,26 @@ export default function Home() {
                   )}
                 >
                   <Mail className="h-5 w-5" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Decorative Abstract Element */}
-          <div className="hidden md:block relative h-125 w-full border border-border/30 bg-card/10 backdrop-blur-sm p-8">
-            <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-primary"></div>
-            <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-primary"></div>
-            <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-primary"></div>
-            <div className="absolute bottom-0 right-0 size-4 border-b-2 border-r-2 border-primary"></div>
-
-            <div className="h-full w-full flex flex-col justify-between font-mono text-xs text-muted-foreground">
-              <div className="flex justify-between">
-                <span>SYS.STATUS: NORMAL</span>
-                <span>UPTIME: 99.9%</span>
-              </div>
-
-              <div className="space-y-2">
-                <div className="h-1 w-full bg-secondary overflow-hidden">
-                  <div className="h-full bg-primary w-[75%]"></div>
-                </div>
-
-                <div className="flex justify-between">
-                  <span>CPU_LOAD</span>
-                  <span>75%</span>
-                </div>
-
-                <div className="h-1 w-full bg-secondary overflow-hidden">
-                  <div className="h-full bg-primary w-[42%]"></div>
-                </div>
-
-                <div className="flex justify-between">
-                  <span>MEM_USAGE</span>
-                  <span>42%</span>
-                </div>
-              </div>
-
-              <div className="text-right">
-                <span className="block text-4xl font-bold text-foreground">
-                  03
-                </span>
-                <span>ACTIVE_PROJECTS</span>
-              </div>
-            </div>
+          {/* Hero Development Architecture */}
+          <div className="hidden md:block relative w-full">
+            <img
+              src="/hero-development-architecture.png"
+              alt="Software development architecture showing code, APIs, backend services, database connections"
+              className="w-[200%] max-w-none h-auto object-contain"
+              style={{
+                maskImage:
+                  "linear-gradient(to right, transparent, black 12%, black 88%, transparent), linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
+                maskComposite: "intersect",
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent, black 12%, black 88%, transparent), linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
+                WebkitMaskComposite: "source-in",
+              }}
+            />
           </div>
         </div>
       </Container>
@@ -434,107 +400,84 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Blog / About Section */}
+      {/* About Section */}
       <Container
-        id="blog"
-        className="py-24 border-t border-border max-w-7xl mx-auto"
+        id="about"
+        className="py-24 border-t border-border scroll-mt-20"
       >
-        <h2 className="text-4xl font-display mb-12 uppercase">
-          Transmissions
-        </h2>
+        <div className="max-w-5xl mx-auto">
 
-        <div className="grid gap-8">
-          {blogPosts.map((post, index) => (
-            <Link href="#" key={index} className="group">
-              <div className="grid gap-4 md:grid-cols-[1fr_auto] items-baseline justify-between mb-2">
-                <h3 className="text-2xl font-display group-hover:text-primary transition-colors text-balance">
-                  {post.title}
-                </h3>
+          {/* Centered About Block */}
+          <div className="flex justify-center">
+            <div className="flex flex-col md:flex-row items-stretch gap-12 md:gap-16 w-full max-w-4xl">
 
-                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
-                  {post.date} // {post.readTime}
-                </span>
+              {/* Profile Image */}
+              <div className="w-64 md:w-72 shrink-0 overflow-hidden rounded-full mx-auto md:mx-0">
+                <img
+                  src="/corey-shamburger.jpeg"
+                  alt="Corey Shamburger"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
 
-              <p className="text-muted-foreground mb-4 max-w-2xl">
-                {post.excerpt}
-              </p>
+              {/* Cyan Divider */}
+              <div className="hidden md:block w-px bg-primary shrink-0" />
 
-              <div className="h-px w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
-            </Link>
-          ))}
-        </div>
+              {/* About Content */}
+              <div className="w-full md:w-120 shrink-0">
 
-        <div className="text-center mt-12">
-          <Button variant="outline">VIEW ALL POSTS</Button>
+                <div className="font-mono text-xs text-primary mb-5">
+            // SOFTWARE_DEVELOPER
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-display leading-tight mb-6">
+                  BUILDING{" "}
+                  <span className="text-primary">
+                    PRACTICAL SOFTWARE
+                  </span>
+                  <br />
+                  FOR REAL-WORLD PROBLEMS.
+                </h3>
+
+                <p className="text-muted-foreground text-lg leading-relaxed mb-5">
+                  I&apos;m a software developer focused on application development,
+                  full-stack systems, backend services, REST APIs, databases, and
+                  automation.
+                </p>
+
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  I build practical software solutions with an emphasis on clean
+                  architecture, reliability, and real-world functionality. My
+                  background in technical systems, troubleshooting, and leadership
+                  brings a disciplined, problem-solving approach to software
+                  development.
+                </p>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </Container>
 
       {/* Contact Section */}
       <Container
         id="contact"
-        className="py-24 bg-card border-t border-border"
+        className="py-24 bg-card border-t border-border scroll-mt-20"
       >
-        <div className="max-w-2xl justify-self-center">
+        <div className="max-w-2xl mx-auto text-center">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-display mb-4">
               INITIATE_CONTACT
             </h2>
 
             <p className="text-muted-foreground">
-              Have a project in mind or just want to discuss the singularity?
-              Send a signal.
+              Interested in discussing a software development opportunity,
+              potential employment, project, or collaboration? Send me a message.
             </p>
           </div>
 
-          <form className="grid gap-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  NAME
-                </label>
-
-                <Input id="name" placeholder="John Doe" />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  EMAIL
-                </label>
-
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label
-                htmlFor="message"
-                className="text-xs font-mono text-muted-foreground"
-              >
-                MESSAGE
-              </label>
-
-              <Textarea
-                id="message"
-                placeholder="Enter your message..."
-                className="min-h-37.5"
-              />
-            </div>
-
-            <Button type="submit" className="w-full" size="lg">
-              SEND TRANSMISSION
-            </Button>
-          </form>
+          <ContactForm />
         </div>
       </Container>
 
