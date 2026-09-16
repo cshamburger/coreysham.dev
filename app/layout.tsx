@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+// Next.js processes this stylesheet at build time; TypeScript has no module declaration for CSS.
+// @ts-expect-error -- global CSS is handled by Next.js
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -20,9 +22,9 @@ const siteUrl =
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000";
 
-const title = "Dev Starter by Zippystarter";
+const title = "Corey Shamburger | Software Developer";
 const description =
-  "Dev Starter is an open source, one page developer portfolio template.";
+  "Software developer specializing in application development, full-stack systems, backend services, REST APIs, and automation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     description,
     url: "./",
     siteName: title,
-    images: "/og.jpg",
+    images: "/icon.png",
   },
 };
 
