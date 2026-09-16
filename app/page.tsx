@@ -8,8 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Github,
   Linkedin,
@@ -34,7 +32,14 @@ export default function Home() {
       title: "OPERRA",
       description:
         "Developer infrastructure and SaaS API platform featuring multi-tenant organizations, API key management, usage tracking, billing workflows, and production-oriented backend architecture.",
-      tags: ["TypeScript", "PostgreSQL", "Prisma", "Redis", "Docker", "REST API"],
+      tags: [
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Docker",
+        "REST API",
+      ],
       image: "/operra-dashboard.png",
       link: "https://www.ventryxtech.com/login",
       linkLabel: "Live Demo",
@@ -65,7 +70,15 @@ export default function Home() {
   const skills = [
     {
       category: "Languages",
-      items: ["Python", "PHP", "JavaScript", "TypeScript", "SQL", "HTML5", "CSS3"],
+      items: [
+        "Python",
+        "PHP",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "HTML5",
+        "CSS3",
+      ],
     },
     {
       category: "Frameworks",
@@ -73,52 +86,68 @@ export default function Home() {
     },
     {
       category: "Databases",
-      items: ["PostgreSQL", "MySQL", "SQLite", "Prisma ORM", "SQLAlchemy"],
+      items: [
+        "PostgreSQL",
+        "MySQL",
+        "SQLite",
+        "Prisma ORM",
+        "SQLAlchemy",
+      ],
     },
     {
       category: "Tools",
-      items: ["Git", "GitHub", "Docker", "Postman", "VS Code", "NetBeans"],
+      items: [
+        "Git",
+        "GitHub",
+        "Docker",
+        "Postman",
+        "VS Code",
+        "NetBeans",
+      ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <ScrollToTop />
-      {/* Navigation / Header */}
+
+      {/* =========================
+          NAVIGATION / HEADER
+      ========================== */}
       <Container
         component="header"
         wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
-        className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 uppercase"
       >
-        <div className="text-xl font-bold font-mono tracking-tighter">
+        <div className="whitespace-nowrap font-mono text-base font-bold tracking-tighter sm:text-xl">
           Corey<span className="text-primary">_</span>Shamburger
         </div>
 
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
+        <nav className="hidden gap-5 text-xs font-medium text-muted-foreground md:flex lg:gap-8 lg:text-sm">
           <Link
             href="#projects"
-            className="hover:text-primary transition-colors"
+            className="transition-colors hover:text-primary"
           >
             Projects
           </Link>
 
           <Link
             href="#skills"
-            className="hover:text-primary transition-colors"
+            className="transition-colors hover:text-primary"
           >
             Skills
           </Link>
 
           <Link
             href="#about"
-            className="hover:text-primary transition-colors"
+            className="transition-colors hover:text-primary"
           >
             About
           </Link>
 
           <Link
             href="#contact"
-            className="hover:text-primary transition-colors"
+            className="transition-colors hover:text-primary"
           >
             Contact
           </Link>
@@ -127,7 +156,7 @@ export default function Home() {
         <Button
           asChild
           variant="outline"
-          className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary"
+          className="border-primary/50 px-3 font-mono text-[10px] hover:border-primary hover:bg-primary/10 hover:text-primary sm:px-4 sm:text-xs"
         >
           <a
             href="/Corey_Shamburger_Software_Developer_Resume.pdf"
@@ -139,50 +168,55 @@ export default function Home() {
         </Button>
       </Container>
 
-      {/* Hero Section */}
+      {/* =========================
+          HERO SECTION
+      ========================== */}
       <Container
         wrapperClassName="relative min-h-screen flex items-center pt-16 overflow-hidden"
         className="mx-auto max-w-7xl flex-1"
       >
-        {/* Background Image with Overlay */}
+        {/* Background */}
         <div className="absolute inset-0 z-0">
-          <div className="relative w-screen h-screen bg-background overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
+          <div className="relative h-full w-full overflow-hidden bg-background">
+            <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
           </div>
 
           <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-mono">
+        {/* Hero Content */}
+        <div className="relative z-10 grid w-full grid-cols-1 items-center gap-8 py-16 md:grid-cols-2 md:gap-8 md:py-12 lg:gap-12">
+          {/* Hero Text */}
+          <div className="mx-auto w-full max-w-xl space-y-5 md:mx-0 md:space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-[10px] text-primary sm:text-xs">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
+            <h1 className="font-display text-5xl leading-[0.9] tracking-tighter sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl">
               SOFTWARE
               <br />
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #00bfe8 0%, #67e8f9 50%, #ffffff 100%)",
+                  backgroundImage:
+                    "linear-gradient(to right, #00bfe8 0%, #67e8f9 50%, #ffffff 100%)",
                 }}
               >
                 DEVELOPER
               </span>
             </h1>
 
-            <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
+            <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg md:text-base lg:text-lg xl:text-xl">
               I specialize in Software Development with a focus on Application
               Development, building full-stack applications, backend services,
               REST APIs, databases, and automation tools.
             </p>
 
-            <div className="flex gap-4 pt-4 items-center">
+            <div className="flex flex-wrap items-center gap-3 pt-2 sm:gap-4 sm:pt-4">
               <a
                 href="#projects"
                 className={cn(
@@ -193,14 +227,17 @@ export default function Home() {
                 View projects <ArrowRight className="size-4" />
               </a>
 
-              <div className="flex gap-2">
+              <div className="flex gap-1 sm:gap-2">
                 <Link
                   href="https://github.com/cshamburger"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({
+                      variant: "ghost",
+                      size: "icon",
+                    })
                   )}
                 >
                   <Github className="h-5 w-5" />
@@ -212,7 +249,10 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({
+                      variant: "ghost",
+                      size: "icon",
+                    })
                   )}
                 >
                   <Linkedin className="h-5 w-5" />
@@ -222,7 +262,10 @@ export default function Home() {
                   href="mailto:corey@coreysham.dev"
                   aria-label="Email Corey"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({
+                      variant: "ghost",
+                      size: "icon",
+                    })
                   )}
                 >
                   <Mail className="h-5 w-5" />
@@ -232,11 +275,11 @@ export default function Home() {
           </div>
 
           {/* Hero Development Architecture */}
-          <div className="hidden md:block relative w-full">
+          <div className="relative mx-auto hidden w-full items-center justify-center md:flex">
             <img
               src="/hero-development-architecture.png"
               alt="Software development architecture showing code, APIs, backend services, database connections"
-              className="w-[200%] max-w-none h-auto object-contain"
+              className="h-auto w-[125%] max-w-none object-contain lg:w-[140%] xl:w-[150%]"
               style={{
                 maskImage:
                   "linear-gradient(to right, transparent, black 12%, black 88%, transparent), linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
@@ -250,41 +293,43 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Projects Section */}
+      {/* =========================
+          PROJECTS SECTION
+      ========================== */}
       <Container
         id="projects"
         component="section"
-        wrapperClassName="py-24 border-t border-border"
-        className="mx-auto max-w-7xl flex-1"
+        wrapperClassName="py-16 sm:py-20 lg:py-24 border-t border-border"
+        className="mx-auto max-w-7xl flex-1 scroll-mt-20"
       >
-        <div className="grid justify-between items-end mb-16 gap-4">
+        <div className="mb-10 grid items-end justify-between gap-6 sm:mb-12 lg:mb-16">
           <div>
-            <h2 className="text-4xl md:text-6xl font-display tracking-tighter mb-4">
+            <h2 className="mb-4 font-display text-4xl tracking-tighter sm:text-5xl md:text-6xl">
               SELECTED
               <br />
               WORKS
             </h2>
 
-            <div className="h-1 w-24 bg-primary"></div>
+            <div className="h-1 w-24 bg-primary" />
           </div>
 
-          <p className="text-muted-foreground max-w-sm text-left">
+          <p className="max-w-sm text-left text-muted-foreground">
             A selection of software applications, backend systems, and developer
             tools built to solve practical problems.
           </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,250px),1fr))] grid-rows-[repeat(3,auto)] gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
+              className="group overflow-hidden rounded-none border-border bg-card pt-0 transition-all duration-300 hover:border-primary/50"
             >
               <ProjectImage src={project.image} alt={project.title} />
 
               <div className="grid gap-4">
                 <CardHeader className="grid gap-4">
-                  <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors">
+                  <CardTitle className="font-display text-2xl transition-colors group-hover:text-primary">
                     {project.title}
                   </CardTitle>
 
@@ -308,21 +353,22 @@ export default function Home() {
                 </CardContent>
               </div>
 
-              <CardFooter className="flex justify-between pt-0">
+              <CardFooter className="flex flex-wrap justify-between gap-4 pt-0">
                 <Link
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
+                  className="flex items-center gap-2 font-display text-sm transition-colors hover:text-primary"
                 >
-                  {project.linkLabel} <ExternalLink className="size-3" />
+                  {project.linkLabel}
+                  <ExternalLink className="size-3" />
                 </Link>
 
                 <Link
                   href={project.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
+                  className="flex items-center gap-2 font-display text-sm transition-colors hover:text-primary"
                 >
                   CODE <Github className="size-3" />
                 </Link>
@@ -332,51 +378,61 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Skills Matrix */}
+      {/* =========================
+          SKILLS SECTION
+      ========================== */}
       <Container
         id="skills"
         component="section"
-        wrapperClassName="py-24 bg-secondary/20 border-t border-border"
-        className="mx-auto max-w-7xl flex-1"
+        wrapperClassName="py-16 sm:py-20 lg:py-24 bg-secondary/20 border-t border-border"
+        className="mx-auto max-w-7xl flex-1 scroll-mt-20"
       >
-        <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <h2 className="text-4xl font-display tracking-tighter mb-6">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 className="mb-6 font-display text-4xl tracking-tighter sm:text-5xl lg:text-4xl">
               TECH_STACK
             </h2>
 
-            <p className="text-muted-foreground mb-8">
+            <p className="mb-8 max-w-lg text-muted-foreground">
               My preferred weapons of choice for building digital products.
               Always learning, always evolving.
             </p>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Code2 className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">CLEAN_CODE</span>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="flex aspect-square flex-col items-center justify-center border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
+                <Code2 className="mb-2 h-8 w-8 text-primary" />
+                <span className="text-center font-mono text-[10px] sm:text-xs">
+                  CLEAN_CODE
+                </span>
               </div>
 
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Database className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">SCALABLE_DB</span>
+              <div className="flex aspect-square flex-col items-center justify-center border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
+                <Database className="mb-2 h-8 w-8 text-primary" />
+                <span className="text-center font-mono text-[10px] sm:text-xs">
+                  SCALABLE_DB
+                </span>
               </div>
 
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Cpu className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">PERFORMANCE</span>
+              <div className="flex aspect-square flex-col items-center justify-center border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
+                <Cpu className="mb-2 h-8 w-8 text-primary" />
+                <span className="text-center font-mono text-[10px] sm:text-xs">
+                  PERFORMANCE
+                </span>
               </div>
 
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Terminal className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">DEVOPS</span>
+              <div className="flex aspect-square flex-col items-center justify-center border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
+                <Terminal className="mb-2 h-8 w-8 text-primary" />
+                <span className="text-center font-mono text-[10px] sm:text-xs">
+                  DEVOPS
+                </span>
               </div>
             </div>
           </div>
 
-          <div className="md:col-span-8 grid sm:grid-cols-3 gap-8">
+          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 xl:grid-cols-3">
             {skills.map((skillGroup, idx) => (
               <div key={idx} className="space-y-6">
-                <h3 className="text-xl font-display border-b border-primary/30 pb-2 inline-block">
+                <h3 className="inline-block border-b border-primary/30 pb-2 font-display text-xl">
                   {skillGroup.category}
                 </h3>
 
@@ -384,13 +440,13 @@ export default function Home() {
                   {skillGroup.items.map((skill, sIdx) => (
                     <li
                       key={sIdx}
-                      className="flex items-center justify-between group"
+                      className="group flex items-center justify-between gap-4"
                     >
-                      <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      <span className="font-mono text-sm text-muted-foreground transition-colors group-hover:text-foreground">
                         {skill}
                       </span>
 
-                      <div className="h-0.5 w-12 bg-secondary group-hover:bg-primary transition-colors"></div>
+                      <div className="h-0.5 w-8 shrink-0 bg-secondary transition-colors group-hover:bg-primary sm:w-12" />
                     </li>
                   ))}
                 </ul>
@@ -400,80 +456,80 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* About Section */}
+      {/* =========================
+          ABOUT SECTION
+      ========================== */}
       <Container
         id="about"
-        className="py-24 border-t border-border scroll-mt-20"
+        className="scroll-mt-20 border-t border-border py-16 sm:py-20 lg:py-24"
       >
-        <div className="max-w-5xl mx-auto">
-
-          {/* Centered About Block */}
+        <div className="mx-auto max-w-5xl">
           <div className="flex justify-center">
-            <div className="flex flex-col md:flex-row items-stretch gap-12 md:gap-16 w-full max-w-4xl">
-
+            <div className="flex w-full max-w-4xl flex-col items-center gap-8 md:flex-row md:items-stretch md:gap-12 lg:gap-16">
               {/* Profile Image */}
-              <div className="w-64 md:w-72 shrink-0 overflow-hidden rounded-full mx-auto md:mx-0">
+              <div className="mx-auto w-52 shrink-0 overflow-hidden rounded-full sm:w-60 md:mx-0 md:w-64 lg:w-72">
                 <img
                   src="/corey-shamburger.jpeg"
                   alt="Corey Shamburger"
-                  className="w-full h-full object-cover object-top"
+                  className="h-full w-full object-cover object-top"
                 />
               </div>
 
-              {/* Cyan Divider */}
-              <div className="hidden md:block w-px bg-primary shrink-0" />
+              {/* Cyan Divider - Desktop */}
+              <div className="hidden w-px shrink-0 bg-primary md:block" />
+
+              {/* Cyan Divider - Mobile */}
+              <div className="h-px w-24 bg-primary md:hidden" />
 
               {/* About Content */}
-              <div className="w-full md:w-120 shrink-0">
-
-                <div className="font-mono text-xs text-primary mb-5">
-            // SOFTWARE_DEVELOPER
+              <div className="w-full min-w-0 max-w-xl">
+                <div className="mb-5 font-mono text-xs text-primary">
+                  // SOFTWARE_DEVELOPER
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-display leading-tight mb-6">
+                <h3 className="mb-6 font-display text-2xl leading-tight sm:text-3xl">
                   BUILDING{" "}
-                  <span className="text-primary">
-                    PRACTICAL SOFTWARE
-                  </span>
-                  <br />
-                  FOR REAL-WORLD PROBLEMS.
+                  <span className="text-primary">PRACTICAL SOFTWARE</span>
+                  <br className="hidden sm:block" />
+                  <span className="sm:ml-0"> FOR REAL-WORLD PROBLEMS.</span>
                 </h3>
 
-                <p className="text-muted-foreground text-lg leading-relaxed mb-5">
-                  I&apos;m a software developer focused on application development,
-                  full-stack systems, backend services, REST APIs, databases, and
-                  automation.
+                <p className="mb-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  I&apos;m a software developer focused on application
+                  development, full-stack systems, backend services, REST APIs,
+                  databases, and automation.
                 </p>
 
-                <p className="text-muted-foreground text-lg leading-relaxed">
+                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                   I build practical software solutions with an emphasis on clean
                   architecture, reliability, and real-world functionality. My
-                  background in technical systems, troubleshooting, and leadership
-                  brings a disciplined, problem-solving approach to software
-                  development.
+                  background in technical systems, troubleshooting, and
+                  leadership brings a disciplined, problem-solving approach to
+                  software development.
                 </p>
-
               </div>
             </div>
           </div>
-
         </div>
       </Container>
 
-      {/* Contact Section */}
+      {/* =========================
+          CONTACT SECTION
+      ========================== */}
       <Container
         id="contact"
-        className="py-24 bg-card border-t border-border scroll-mt-20"
+        className="scroll-mt-20 border-t border-border bg-card py-16 sm:py-20 lg:py-24"
       >
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-display mb-4">
+        <div className="mx-auto w-full max-w-2xl text-center">
+          <div className="mb-8 text-center sm:mb-12">
+            <h2 className="mb-4 font-display text-3xl sm:text-4xl">
               INITIATE_CONTACT
             </h2>
 
-            <p className="text-muted-foreground">
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
               Interested in discussing a software development opportunity,
-              potential employment, project, or collaboration? Send me a message.
+              potential employment, project, or collaboration? Send me a
+              message.
             </p>
           </div>
 
@@ -481,22 +537,24 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Footer */}
+      {/* =========================
+          FOOTER
+      ========================== */}
       <Container
         component="footer"
-        className="py-8 border-t border-border bg-background text-center max-w-7xl mx-auto"
+        className="mx-auto max-w-7xl border-t border-border bg-background py-8 text-center"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-xs font-mono text-muted-foreground">
+        <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
+          <div className="font-mono text-xs text-muted-foreground">
             © 2026 COREY SHAMBURGER. ALL RIGHTS RESERVED.
           </div>
 
-          <div className="flex gap-6 text-xs font-mono text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-4 font-mono text-xs text-muted-foreground sm:gap-6">
             <Link
               href="https://github.com/cshamburger"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
+              className="transition-colors hover:text-primary"
             >
               GITHUB
             </Link>
@@ -505,14 +563,14 @@ export default function Home() {
               href="https://www.linkedin.com/in/corey-shamburger"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
+              className="transition-colors hover:text-primary"
             >
               LINKEDIN
             </Link>
 
             <Link
               href="mailto:corey@coreysham.dev"
-              className="hover:text-primary transition-colors"
+              className="transition-colors hover:text-primary"
             >
               EMAIL
             </Link>
